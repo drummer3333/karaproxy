@@ -22,7 +22,15 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
             if (body) {
                 // modify some information
                 var modifiedBody = JSON.parse(body);
-                modifiedBody.songs = modifiedBody.songs.filter((song) => song.artist.id != 5223)
+                modifiedBody.songs = modifiedBody.songs.filter((song) => {
+                    if (song.artist.id != 5223 && song.id != 19346) {
+                        return true;
+                    } else {
+                        //console.log(song.name + ' - ' + song.artist.name);
+                        return false;
+                    }
+                
+                });
                 modifiedBody.count = modifiedBody.songs.length;
                 return JSON.stringify(modifiedBody);
             }
@@ -39,7 +47,6 @@ proxy.on('error', function (err, req, res) {
 // Create your server and then proxies the request
 var server = http.createServer(function (req, res) {
     proxy.web(req, res);
-}).listen(process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    process.env.OPENSHIFT_NODEJS_IP);
+}).listen(8080);
 
 
