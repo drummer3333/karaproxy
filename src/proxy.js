@@ -31,6 +31,11 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
     }
 });
 
+proxy.on('error', function (err, req, res) {
+    console.log(err)
+});
+  
+
 // Create your server and then proxies the request
 var server = http.createServer(function (req, res) {
     proxy.web(req, res);
