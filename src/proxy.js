@@ -39,6 +39,7 @@ proxy.on('error', function (err, req, res) {
 // Create your server and then proxies the request
 var server = http.createServer(function (req, res) {
     proxy.web(req, res);
-}).listen(8080);
+}).listen(process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    process.env.OPENSHIFT_NODEJS_IP);
 
 
