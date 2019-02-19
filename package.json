@@ -1,0 +1,25 @@
+{
+  "name": "karaproxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/proxy.js",
+  "dependencies": {
+    "harmon": "^1.4.3",
+    "http-proxy": "^1.17.0",
+    "http-proxy-response-rewrite": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drummer3333/karaproxy.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drummer3333/karaproxy/issues"
+  },
+  "homepage": "https://github.com/drummer3333/karaproxy#readme"
+}
