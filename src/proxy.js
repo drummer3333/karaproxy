@@ -34,6 +34,6 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
 // Create your server and then proxies the request
 var server = http.createServer(function (req, res) {
     proxy.web(req, res);
-}).listen(8008);
+}).listen(8080);
 
 
