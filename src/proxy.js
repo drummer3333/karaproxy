@@ -23,7 +23,13 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
                 // modify some information
                 var modifiedBody = JSON.parse(body);
                 modifiedBody.songs = modifiedBody.songs.filter((song) => {
-                    if (song.artist.id != 5223 && song.id != 19346) {
+                    if (song.artist.id != 5223 //Helene Fischer 
+                        && song.id != 19346 // 1001 Nacht
+                        && song.id != 45873 // Let it go frozen
+                        && song.id != 45761 // Let it go Demi
+                        && song.id != 52471 // Let it go Jazz
+                        && song.id != 47597 // Let it go Dance
+                       ) {
                         return true;
                     } else {
                         //console.log(song.name + ' - ' + song.artist.name);
